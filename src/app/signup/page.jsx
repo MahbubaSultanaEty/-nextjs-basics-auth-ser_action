@@ -37,7 +37,7 @@ const SignUpPage = () => {
 
     return (
         <Form className="flex w-96 flex-col gap-4 bg-gray-100 p-3 mt-12 rounded shadow-xl mx-auto" onSubmit={onSubmit}>
-            <h2 className="text-2xl font-semibold text-blue-900">Sign Out</h2>
+            <h2 className="text-2xl font-semibold text-blue-900">Sign Up</h2>
     
     {/* name */}
             <TextField

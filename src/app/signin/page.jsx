@@ -22,7 +22,7 @@ const SignInPage = () => {
         //    callbackURL: "/"
         }, {
             onSuccess: () => {
-                 router.push('/')
+                 router.push('/models')
            }
         });
 
