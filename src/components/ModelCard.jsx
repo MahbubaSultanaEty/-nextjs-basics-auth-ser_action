@@ -1,48 +1,57 @@
 import Image from 'next/image';
-import React from 'react';
+
 
 const ModelCard = ({model}) => {
     return (
-         <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 bg-white mx-auto">
-      
-      {/* Image */}
-      <div className="h-48 w-full overflow-hidden flex items-center justify-center bg-gray-300 rounded-2xl">
-        <Image
+             <div className="w-10/12 mx-auto bg-[#73f7f7] rounded-[28px] p-6 shadow-sm">
+
+      <div className="flex gap-10 items-center">
+
+        {/* Left */}
+        <div className="w-[300px] h-[300px] rounded-[24px] bg-gradient-to-br from-[#4ade80] to-[#22c55e] flex items-center justify-center">
+            <Image
           src={model.image}
           alt={model.title}
                     width={100}
                     height={100}
         />
+      
+        </div>
+
+        {/* Right */}
+        <div className="flex-1">
+
+          {model.status === "popular" && (
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-green-200 text-green-600 mb-5">
+              🔥 <span className="font-medium">POPULAR</span>
+            </div>
+          )}
+
+          <h2 className="text-[42px] font-semibold text-gray-900 mb-4">
+            {model.title}
+          </h2>
+
+          <p className="text-gray-600 text-lg leading-relaxed max-w-[480px]">
+            {model.description}
+          </p>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-4 space-y-2">
-        
-        {/* Title + Badge */}
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">{model.title}</h2>
-          {model.status === "popular" && (
-            <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">
-              Popular
-            </span>
-          )}
-        </div>
+      <div className="h-[1px] bg-gray-200 my-10"></div>
 
-        {/* Description */}
-        <p className="text-sm text-gray-600 line-clamp-2">
-          {model.description}
-        </p>
-
-        {/* Price + Button */}
-        <div className="flex items-center justify-between pt-2">
-          <span className="text-xl font-bold text-green-600">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-[42px] font-bold text-green-600">
             ${model.price}
-          </span>
-
-          <button className="bg-black text-white px-4 py-1.5 rounded-lg hover:bg-gray-800 transition">
-            Buy
-          </button>
+          </p>
+          <p className="text-gray-500 mt-1">
+            One-time payment
+          </p>
         </div>
+
+        <button className="flex items-center gap-3 px-8 py-4 rounded-[14px] bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white text-lg shadow-md">
+          🛒 View Details
+        </button>
       </div>
     </div>
     );

@@ -2,7 +2,7 @@ import ModelCard from '@/components/ModelCard';
 import React from 'react';
 
 const ModelsPage = async () => {
-    const res = await fetch('http://localhost:8000/models');
+    const res = await fetch('http://localhost:8000/models', {cache: 'no-store'});
     const models = await res.json();
     console.log(models);
 
