@@ -16,6 +16,7 @@ const Navbar = () => {
     <ul className="flex items-center gap-4">
       <li><Link href='/'>Home</Link></li>
       <li><Link href={'/models'}>Models</Link></li>
+             
     </ul>
   </header>
 </nav>
@@ -24,7 +25,8 @@ const Navbar = () => {
   <header className="flex h-16 items-center justify-between px-6">
     <div>Logo</div>
     <ul className="flex items-center gap-4">
-      <li><Button>Sign Up</Button></li>
+       <li><Link href={'/signup'}>
+                <Button>Sign up</Button></Link></li>
     </ul>
   </header>
 </nav>
