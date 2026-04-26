@@ -5,18 +5,18 @@ import {Button, Description, FieldError, Form, Input, Label, TextField} from "@h
 import { useRouter } from "next/navigation";
 
 
-const SignUpPage = () => {
+const SignInPage = () => {
 
-    const router = useRouter();
+        const router = useRouter();
 
     const onSubmit = async(e) => {
         e.preventDefault();
-        const name = e.target.name.value;
+        
         const email = e.target.email.value;
         const password = e.target.password.value;
        
-        const { data, error } = await authClient.signUp.email({
-            name,
+        const { data, error } = await authClient.signIn.email({
+            
             email,
             password,
         //    callbackURL: "/"
@@ -27,28 +27,17 @@ const SignUpPage = () => {
         });
 
         if (data) {
-            alert('sign up successfull')
+            alert('sign in successfull')
         }
         if (error) {
-            alert('user already exist')
+            alert('user not found')
         }
    }
 
-
     return (
-        <Form className="flex w-96 flex-col gap-4 bg-gray-100 p-3 mt-12 rounded shadow-xl mx-auto" onSubmit={onSubmit}>
-            <h2 className="text-2xl font-semibold text-blue-900">Sign Out</h2>
-    
-    {/* name */}
-            <TextField
-        isRequired
-        name="name"
-        type="text" >
-        <Label>Name</Label>
-        <Input placeholder="your name" />
-        <FieldError />
-            </TextField>
-            
+      <Form className="flex w-96 flex-col gap-4 bg-gray-100 p-3 mt-12 rounded shadow-xl mx-auto" onSubmit={onSubmit}>
+    <h2 className="text-2xl font-semibold text-blue-900">Sign In</h2>
+          
     {/* email */}
             <TextField
         isRequired
@@ -101,4 +90,4 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default SignInPage;
