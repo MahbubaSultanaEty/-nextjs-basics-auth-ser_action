@@ -29,12 +29,7 @@ export const posts = [
 "title": "nesciunt quas odio",
 "body": "repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque"
 },
-{
-"userId": 1,
-"id": 6,
-"title": "dolorem eum magni eos aperiam quia",
-"body": "ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae"
-},
+
 ]
 
 export const addPost = (newPost) => {

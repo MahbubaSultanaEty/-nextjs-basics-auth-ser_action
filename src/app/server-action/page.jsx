@@ -12,15 +12,20 @@ import {
   TextField,
 } from "@heroui/react";
 
-import { getPosts } from "@/database/postdb";
+import { addPost, getPosts } from "@/database/postdb";
+import { handleAddPost } from "@/actions/addPostAction";
+
 
 const ServerActionPage = () => {
-  const posts = getPosts();
-
+    const posts = getPosts();
+    
+    
   return (
     <div>
       {/* form */}
-      <Form className="w-full max-w-96 mx-auto border rounded-b-lg border-l-4 border-l-blue-700 mt-12 p-3">
+          <Form
+              action={handleAddPost}
+              className="w-full max-w-96 mx-auto border rounded-b-lg border-l-4 border-l-blue-700 mt-12 p-3">
         <Fieldset>
           <Fieldset.Legend>Add New Post</Fieldset.Legend>
           <Description>Update your profile information.</Description>
@@ -30,7 +35,7 @@ const ServerActionPage = () => {
               <Input placeholder="post title" />
               <FieldError />
             </TextField>
-            <TextField isRequired name="description" type="text">
+            <TextField isRequired name="body" type="text">
               <Label>Description</Label>
               <Input placeholder="post body or desciption" />
               <FieldError />
