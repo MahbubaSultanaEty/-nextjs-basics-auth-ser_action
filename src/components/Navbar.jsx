@@ -51,6 +51,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link href={"/server-action"}>
+                <Button>Server Action</Button>
+              </Link>
+            </li>
+            <li>
               <Link href={"/signin"}>
                 <Button variant="outline">Sign In</Button>
               </Link>
